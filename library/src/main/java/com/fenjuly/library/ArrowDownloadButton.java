@@ -19,8 +19,8 @@ import java.util.List;
  */
 public class ArrowDownloadButton extends View {
 
-    private static final int BLUE_ONE = Color.rgb(46, 164, 242);
-    private static final int WHILE = Color.rgb(255, 255, 255);
+    private static int circleColor = Color.rgb(46, 164, 242);
+    private static int arrowColor = Color.rgb(255, 255, 255);
     private static final float RADIUS = 180;
     private static final int TRI_POINT_NUMBER = 17;
     private static final float MAX_WAVE_HEIGHT = 10;
@@ -155,6 +155,22 @@ public class ArrowDownloadButton extends View {
     private int hookCount = 0;
     float lengthX = 3 * radius / 4;
     float lengthY = 3 * radius / 4;
+
+    public static int getCircleColor() {
+        return circleColor;
+    }
+
+    public static void setCircleColor(int circleColor) {
+        ArrowDownloadButton.circleColor = circleColor;
+    }
+
+    public static int getArrowColor() {
+        return arrowColor;
+    }
+
+    public static void setArrowColor(int arrowColor) {
+        ArrowDownloadButton.arrowColor = arrowColor;
+    }
 
     public float getProgress() {
         return progress;
@@ -474,36 +490,36 @@ public class ArrowDownloadButton extends View {
         arcPaint.setAntiAlias(true);
         arcPaint.setStyle(Paint.Style.STROKE);
         arcPaint.setStrokeWidth(arcWidth);
-        arcPaint.setColor(BLUE_ONE);
+        arcPaint.setColor(getCircleColor());
 
         arrowPaint = new Paint();
         arrowPaint.setAntiAlias(true);
         arrowPaint.setStyle(Paint.Style.STROKE);
         arrowPaint.setStrokeWidth(arrowWidth);
-        arrowPaint.setColor(WHILE);
+        arrowPaint.setColor(getArrowColor());
 
         smallPaint = new Paint();
         smallPaint.setAntiAlias(true);
         smallPaint.setStyle(Paint.Style.FILL);
-        smallPaint.setColor(WHILE);
+        smallPaint.setColor(getArrowColor());
 
         triPaint = new Paint();
         triPaint.setAntiAlias(true);
         triPaint.setStyle(Paint.Style.STROKE);
         triPaint.setStrokeWidth(triWidth);
-        triPaint.setColor(WHILE);
+        triPaint.setColor(getArrowColor());
 
         loadingPaint = new Paint();
         loadingPaint.setAntiAlias(true);
         loadingPaint.setStyle(Paint.Style.STROKE);
         loadingPaint.setStrokeWidth(loadingWidth);
-        loadingPaint.setColor(WHILE);
+        loadingPaint.setColor(getArrowColor());
 
         textPaint = new Paint();
         textPaint.setAntiAlias(true);
         textPaint.setStyle(Paint.Style.FILL);
         textPaint.setStrokeWidth(1);
-        textPaint.setColor(WHILE);
+        textPaint.setColor(getArrowColor());
         textPaint.setTextSize(textSize);
     }
 

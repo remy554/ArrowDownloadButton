@@ -644,6 +644,8 @@ public class ArrowDownloadButton extends View {
             hookCount = bundle.getInt(HOOK_COUNT_I);
             lengthX = bundle.getFloat(LENGTH_X_I);
             lengthY = bundle.getFloat(LENGTH_Y_I);
+			
+			state = bundle.getParcelable(INSTANCE_STATE);
         }
         super.onRestoreInstanceState(state);
     }
